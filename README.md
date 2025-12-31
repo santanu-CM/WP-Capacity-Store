@@ -79,7 +79,7 @@ Capcity T-Shirts Stores is a comprehensive WordPress plugin that enables you to 
 
 ## Installation
 
-1. Upload the `Capcity-tshirts-stores` folder to `/wp-content/plugins/` directory
+1. Upload the `capacity-tshirts-stores` folder to `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Navigate to **Stores > Settings** to configure OAuth credentials
 4. Go to **Stores > Store List** to add your first store
@@ -89,12 +89,12 @@ Capcity T-Shirts Stores is a comprehensive WordPress plugin that enables you to 
 ### Webflow OAuth Setup
 
 1. Create a Webflow OAuth application at [Webflow Developer Portal](https://developers.webflow.com/)
-2. Configure OAuth redirect URI: `your-site.com/wp-admin/admin.php?page=Capcity-tshirts-stores-oauth-callback`
+2. Configure OAuth redirect URI: `your-site.com/wp-admin/admin.php?page=capacity-tshirts-stores-oauth-callback`
 3. Add your Client ID and Client Secret in **Stores > Settings**
    - Alternatively, define them as constants in `wp-config.php`:
      ```php
-     define('Capcity_TSHIRTS_WEBFLOW_CLIENT_ID', 'your-client-id');
-     define('Capcity_TSHIRTS_WEBFLOW_CLIENT_SECRET', 'your-client-secret');
+     define('CAPACITY_TSHIRTS_WEBFLOW_CLIENT_ID', 'your-client-id');
+     define('CAPACITY_TSHIRTS_WEBFLOW_CLIENT_SECRET', 'your-client-secret');
      ```
 
 ### Required OAuth Scopes
@@ -108,7 +108,7 @@ The plugin requires the following Webflow OAuth scopes:
 ## Directory Structure
 
 ```
-Capcity-tshirts-stores/
+capacity-tshirts-stores/
 ├── assets/
 │   ├── css/
 │   │   └── admin.css          # Admin interface styles
@@ -144,7 +144,7 @@ Capcity-tshirts-stores/
 │   │   └── class-webhook-handler.php  # Webhook processing
 │   ├── class-autoloader.php           # PSR-4 autoloader
 │   └── class-order-normalizer.php     # Order data normalization
-└── Capcity-tshirts-stores.php       # Main plugin file
+└── capacity-tshirts-stores.php       # Main plugin file
 ```
 
 ## Usage
@@ -233,7 +233,7 @@ For Webflow orders, the order details page provides:
 
 The plugin creates three main database tables:
 
-### `wp_Capcity_tshirts_stores`
+### `wp_capacity_tshirts_stores`
 Stores store connection information:
 - `id` - Primary key
 - `title` - Store name
@@ -243,7 +243,7 @@ Stores store connection information:
 - `webhook_status` - Webhook connection status
 - `created_at`, `updated_at` - Timestamps
 
-### `wp_Capcity_tshirts_orders`
+### `wp_capacity_tshirts_orders`
 Stores order data from all platforms:
 - `id` - Primary key
 - `store_id` - Foreign key to stores table
@@ -257,7 +257,7 @@ Stores order data from all platforms:
 - `order_data` - Complete order data (JSON)
 - `created_at`, `updated_at` - Timestamps
 
-### `wp_Capcity_tshirts_logs`
+### `wp_capacity_tshirts_logs`
 Activity and event logging:
 - `id` - Primary key
 - `store_id` - Associated store (optional)
